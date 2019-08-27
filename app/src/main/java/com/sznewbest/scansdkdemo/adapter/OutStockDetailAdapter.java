@@ -57,6 +57,7 @@ public class OutStockDetailAdapter extends BaseAdapter {
             view = LayoutInflater.from(mContext).inflate(R.layout.out_stock_detail_item,null);
             holder = new OutStockDetailAdapter.ViewHolder();
             holder.out_stock_detail_icon = (ImageView) view.findViewById(R.id.out_stock_detail_icon);
+            holder.item_index = (TextView) view.findViewById(R.id.item_index);
             holder.item_bar_code = (TextView) view.findViewById(R.id.item_bar_code);
             holder.item_owner = (TextView) view.findViewById(R.id.item_owner);
             holder.item_variety = (TextView) view.findViewById(R.id.item_variety);
@@ -71,7 +72,9 @@ public class OutStockDetailAdapter extends BaseAdapter {
         }
 
         final OutStockDetailVo item = getItem(i);
+        int item_index = i+1;
         holder.out_stock_detail_icon.setImageResource(R.drawable.out_stock_detail);
+        holder.item_index.setText("序号:"+ item_index);
         holder.item_bar_code.setText("条码号:"+ StringUtils.ifNull(item.getBarCode()));
         holder.item_owner.setText("所属人:"+ StringUtils.ifNull(item.getItemOwner()));
         holder.item_variety.setText("品种:"+StringUtils.ifNull(item.getItemVarietyValue()));
@@ -126,6 +129,7 @@ public class OutStockDetailAdapter extends BaseAdapter {
 
     private class ViewHolder{
         ImageView out_stock_detail_icon;
+        TextView item_index;
         TextView item_bar_code;
         TextView item_owner;
         TextView item_variety;

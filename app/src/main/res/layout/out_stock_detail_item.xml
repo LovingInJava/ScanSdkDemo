@@ -19,12 +19,18 @@
             android:padding="5dp"/>
 
         <TextView
-            android:id="@+id/item_bar_code"
+            android:id="@+id/item_index"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:textSize="13sp" />
 
+        <TextView
+            android:id="@+id/item_bar_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:textSize="13sp" />
     </LinearLayout>
 
     <LinearLayout
